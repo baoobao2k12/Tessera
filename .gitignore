@@ -1,0 +1,8 @@
+build*/
+__pycache__/
+*.pyc
+/data/*.log
+/data/train*.txt
+/matches/
+*.profraw
+*.profdata
