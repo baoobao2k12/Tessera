@@ -33,7 +33,7 @@ Depth reduction(bool improving, Depth d, int mn) {
 
 constexpr int futility_move_count(bool improving, Depth depth) { return (3 + depth * depth) / (2 - improving); }
 
-Value futility_margin(Depth d, bool improving) { return Value(75 * (d - improving)); }
+Value futility_margin(Depth d, bool improving) { return Value(80 * (d - improving)); }
 
 int stat_bonus(Depth d) { return std::min(12 * d * d + 120 * d - 100, 2000); }
 
@@ -699,13 +699,13 @@ Value Thread::search(Position& pos, Stack* ss, Value alpha, Value beta, Depth de
                 int history = (*contHist[0])[movedPiece][to] + (*contHist[1])[movedPiece][to] +
                               (*contHist[3])[movedPiece][to];
                 // Continuation history pruning
-                if (lmrDepth < 4 && history < -3000 * (depth - 1)) continue;
+                if (lmrDepth < 4 && history < -2500 * (depth - 1)) continue;
                 history += 2 * mainHistory[us][from_to(move)];
                 lmrDepth = std::max(0, lmrDepth + history / 8000);
                 // Futility pruning for quiet moves
-                if (!inCheck && lmrDepth < 8 && ss->staticEval + 110 + 120 * lmrDepth <= alpha) continue;
+                if (!inCheck && lmrDepth < 8 && ss->staticEval + 120 + 130 * lmrDepth <= alpha) continue;
                 // SEE pruning for quiet moves
-                if (!pos.see_ge(move, Value(-(24 - std::min(lmrDepth, 16)) * lmrDepth * lmrDepth))) continue;
+                if (!pos.see_ge(move, Value(-(28 - std::min(lmrDepth, 16)) * lmrDepth * lmrDepth))) continue;
             }
         }
 
