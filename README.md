@@ -52,7 +52,7 @@ when the side to move has no legal move.
 ## Contributors
 
 - Tessera developers
-- (add your collaborator here)
+- Me and Changbeoquemienbac (My Friend)
 
 | File | Contents |
 |---|---|
@@ -220,3 +220,6 @@ breakthrough, is missed by the tuned evaluation; the untuned evaluation found it
 - The MSVC and Windows code paths are written but were not compiled or tested in the development
   environment (Linux, GCC 13 and Clang).
 - `tessera_match` uses fork/pipes and is POSIX-only.
+
+## Note
+- 100% AI
