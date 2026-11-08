@@ -171,7 +171,7 @@ deterministic signature of the search), perft speed and the tactical suite in `b
 
 ## Measured results
 
-Development machine: 2-core Intel Xeon (cloud VM), Linux, GCC 13.3 (BMI2 build) and Clang 18.1.
+Development machine: Intel Core i5-13400F, Windows, MSVC (BMI2 build).
 
 **Correctness**
 
