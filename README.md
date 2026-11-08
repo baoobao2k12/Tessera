@@ -217,8 +217,8 @@ breakthrough, is missed by the tuned evaluation; the untuned evaluation found it
   has been measured.
 - The tuning data comes from short self-play games (6,000 nodes per move); deeper data would likely give
   better weights.
-- The MSVC and Windows code paths are written but were not compiled or tested in the development
-  environment (Linux, GCC 13 and Clang).
+- The MSVC/Windows build is now compiled and tested (unit, perft, UCI and movegen suites pass). Sanitizer
+  builds were run on Linux only.
 - `tessera_match` uses fork/pipes and is POSIX-only.
 
 ## Note
